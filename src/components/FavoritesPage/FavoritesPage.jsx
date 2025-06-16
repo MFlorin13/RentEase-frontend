@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import { useAuth } from '../Auth/Auth';
 import { useFavorites } from '../Context/FavoriteContext/FavoriteContext';
 import styles from './FavoritesPage.module.css';
+import api from '../../api/axiosConfig';
 
 const FavoritesPage = () => {
   const [favoriteFlats, setFavoriteFlats] = useState([]);
@@ -24,7 +24,7 @@ const FavoritesPage = () => {
     const fetchFavorites = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('/api/favorites', { 
+        const response = await api.get('/api/favorites', { 
           withCredentials: true 
         });
         
