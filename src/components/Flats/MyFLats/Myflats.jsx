@@ -23,7 +23,7 @@ const MyFlats = () => {
       setError(null);
 
       // Use the dedicated endpoint for user's own flats
-      const response = await api.get('http://localhost:3000/flats/my-flats', {
+      const response = await api.get('/flats/my-flats', {
         withCredentials: true,
       });
 
@@ -172,7 +172,7 @@ const MyFlats = () => {
       }
 
       const response = await api.patch(
-        `http://localhost:3000/flats/${flatId}`,
+        `/flats/${flatId}`,
         updatedData,
         {
           withCredentials: true,
@@ -221,7 +221,7 @@ const MyFlats = () => {
     if (!window.confirm('Are you sure you want to delete this flat?')) return;
 
     try {
-      await api.delete(`http://localhost:3000/flats/${flatId}`, {
+      await api.delete(`/flats/${flatId}`, {
         withCredentials: true,
       });
       setFlats(prev => prev.filter(flat => flat._id !== flatId));

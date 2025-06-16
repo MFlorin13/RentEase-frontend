@@ -32,7 +32,7 @@ const AllFlats = () => {
       try {
         setLoading(true);
 
-        const response = await api.get('http://localhost:3000/flats', {
+        const response = await api.get('/flats', {
           withCredentials: true,
         });
 
@@ -87,7 +87,7 @@ const AllFlats = () => {
     if (!window.confirm('Are you sure you want to delete this flat?')) return;
 
     try {
-      await api.delete(`http://localhost:3000/flats/${flatId}`, {
+      await api.delete(`/flats/${flatId}`, {
         withCredentials: true,
       });
       setFlats((prev) => prev.filter((flat) => flat._id !== flatId));
@@ -127,7 +127,7 @@ const AllFlats = () => {
       }
 
       const response = await api.patch(
-        `http://localhost:3000/flats/${editingFlat._id}`,
+        `/flats/${editingFlat._id}`,
         updatedData,
         {
           withCredentials: true,

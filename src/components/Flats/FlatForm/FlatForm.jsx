@@ -105,7 +105,7 @@ const FlatForm = ({ refreshList }) => {
       }
 
       // Send request to backend
-      await api.post('http://localhost:3000/flats', flatData, {
+      await api.post('/flats', flatData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

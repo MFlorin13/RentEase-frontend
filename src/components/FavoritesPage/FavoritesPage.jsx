@@ -24,7 +24,7 @@ const FavoritesPage = () => {
     const fetchFavorites = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/api/favorites', { 
+        const response = await axios.get('/api/favorites', { 
           withCredentials: true 
         });
         
