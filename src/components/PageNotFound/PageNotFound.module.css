@@ -1,0 +1,301 @@
+/* Enhanced 404 Page Styles */
+:global([data-theme="dark"]) .container {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #f0f0f0;
+}
+
+:global([data-theme="light"]) .container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: #333;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: #333;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Animated Background Elements */
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingElement {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+:global([data-theme="dark"]) .floatingElement {
+  opacity: 0.15;
+  filter: hue-rotate(180deg);
+}
+
+/* Main Content */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+:global([data-theme="dark"]) .content {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Ghost Icon */
+.ghostContainer {
+  margin-bottom: 2rem;
+}
+
+.ghostIcon {
+  font-size: 4rem;
+  color: #fff;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+:global([data-theme="dark"]) .ghostIcon {
+  color: #8b5cf6;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+}
+
+/* 404 Error Code */
+.errorCode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  font-size: clamp(4rem, 15vw, 12rem);
+  line-height: 1;
+}
+
+.errorNumber {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+}
+
+.errorZero {
+  background: linear-gradient(45deg, #feca57, #ff9ff3, #54a0ff, #5f27cd);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite reverse;
+  text-shadow: 0 0 30px rgba(254, 202, 87, 0.5);
+  margin: 0 0.2em;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Title */
+.title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:global([data-theme="dark"]) .title {
+  color: #e2e8f0;
+}
+
+/* Description */
+.description {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+:global([data-theme="dark"]) .description {
+  color: rgba(226, 232, 240, 0.8);
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.primaryButton {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  box-shadow: 
+    0 4px 15px rgba(238, 90, 36, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(238, 90, 36, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+:global([data-theme="dark"]) .secondaryButton {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #e2e8f0;
+}
+
+:global([data-theme="dark"]) .secondaryButton:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.buttonIcon {
+  font-size: 1.1rem;
+}
+
+/* Fun Message */
+.funMessage {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+:global([data-theme="dark"]) .funMessage {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.funMessage p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+:global([data-theme="dark"]) .funMessage p {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .ghostIcon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .errorCode {
+    font-size: clamp(3rem, 12vw, 8rem);
+  }
+  
+  .actionButtons {
+    gap: 0.75rem;
+  }
+}
+
+/* Add some sparkle effect */
+.content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: sparkle 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

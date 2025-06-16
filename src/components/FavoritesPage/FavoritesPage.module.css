@@ -1,0 +1,302 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.125rem;
+  color: var(--color-error);
+  background: rgba(248, 113, 113, 0.15);
+  border-radius: 8px;
+  border: 1px solid var(--color-error);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  background: var(--color-bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.emptyState p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.browseButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.browseButton:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+.flatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.flatCard {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.flatCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+.flatImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.flatCard:hover .flatImage {
+  transform: scale(1.05);
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-bg-primary);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favoriteButton:hover {
+  background: #ef44441a;
+  transform: scale(1.1);
+}
+
+.heartIcon {
+  color: var(--color-favorite);
+  font-size: 20px;
+}
+
+.flatContent {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flatTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flatDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.flatDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.flatDetail:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.detailValue {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.priceValue {
+  font-weight: 700;
+  color: var(--color-success);
+  font-size: 1.1rem;
+}
+
+.listingDate {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: auto;
+}
+
+.actionSection {
+  margin-top: auto;
+}
+
+/* Responsive Design - EXACTLY MATCHING ALLFLATS */
+@media screen and (max-width: 1199px) and (min-width: 900px) {
+  .flatsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 899px) and (min-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .flatsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .flatsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 0;
+  }
+  
+  .flatCard {
+    margin: 0 8px;
+  }
+  
+  .flatTitle {
+    font-size: 1.375rem; /* Responsive but still bigger */
+  }
+  
+  .imageContainer {
+    height: 200px;
+  }
+  
+  .flatContent {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .detailLabel,
+  .detailValue {
+    font-size: 0.9rem; /* Still bigger than before */
+  }
+  
+  .priceValue {
+    font-size: 1.05rem; /* Maintained bigger price */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .flatCard {
+    margin: 0 4px;
+  }
+  
+  .flatTitle {
+    font-size: 1.25rem; /* Still bigger than original */
+  }
+  
+  .imageContainer {
+    height: 180px;
+  }
+  
+  .flatContent {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .detailLabel,
+  .detailValue {
+    font-size: 0.875rem; /* Maintained increased size */
+  }
+  
+  .priceValue {
+    font-size: 1rem; /* Still emphasized */
+  }
+}

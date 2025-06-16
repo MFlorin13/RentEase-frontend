@@ -1,0 +1,112 @@
+/* Base CSS Variables - Light theme (default) */
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-favorite: #ef4444;
+  --color-navbar-bg: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  --color-card-border: #38424e34;
+  --color-border: #e5e7eb;
+  --color-accent: #3b82f6;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  
+  /* Shadows and effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  
+  /* Transition for smooth theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme overrides using data-theme attribute */
+[data-theme="dark"] {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #151b24;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-favorite: #ef4444;
+  --color-navbar-bg: linear-gradient(90deg, #0a0e12, #1a1f26, #212832);
+  --color-card-border: #6e747a;
+  --color-border: #334155;
+  --color-accent: #60a5fa;
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  
+  /* Dark mode shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
+}
+
+/* Additional dark theme class support */
+.dark-theme {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #151b24;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-favorite: #ef4444;
+  --color-border: #334155;
+  --color-accent: #60a5fa;
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
+}
+
+.light-theme {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-favorite: #ef4444;
+  --color-border: #e5e7eb;
+  --color-accent: #3b82f6;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure body and html respect the theme */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent flash of unstyled content during theme initialization */
+html:not([data-theme]) {
+  visibility: hidden;
+}
+
+html[data-theme] {
+  visibility: visible;
+}
+
+/* Additional utility classes for components that might need them */
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.border-color {
+  border-color: var(--color-border);
+}

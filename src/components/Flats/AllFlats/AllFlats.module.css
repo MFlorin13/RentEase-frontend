@@ -1,0 +1,659 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.filterInput {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.filterInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: var(--color-bg-primary);
+}
+
+.rangeInputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.sortButton:hover {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.flatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.flatCard {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.flatCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+.flatImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.flatCard:hover .flatImage {
+  transform: scale(1.05);
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-bg-primary);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favoriteButton:hover {
+  background: #ef44441a;
+  transform: scale(1.1);
+}
+
+.favoriteIcon {
+  color: var(--color-favorite);
+  font-size: 20px;
+}
+
+.adminButtons {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.adminEditButton,
+.adminDeleteButton {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.adminEditButton {
+  background: var(--color-bg-primary);
+  color: #3b82f6;
+}
+
+.adminEditButton:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.adminDeleteButton {
+  background: var(--color-bg-primary);
+  color: #ef4444;
+}
+
+.adminDeleteButton:hover {
+  background: #ef44441a;
+  color: #dc2626;
+}
+
+.flatContent {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flatTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flatDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.flatDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.flatDetail:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.detailValue {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-size: 0.95rem; 
+  text-align: right;
+}
+
+.priceValue {
+  font-weight: 700;
+  color: var(--color-success);
+  font-size: 1.1rem;
+}
+
+.listingDate {
+  font-size: 0.85rem; 
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: auto;
+}
+
+.actionSection {
+  margin-top: auto;
+}
+
+/* Edit Form Styles */
+.editForm {
+  padding: 20px;
+}
+
+.editGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.editField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editField label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.editInput,
+.editSelect,
+.editTextarea {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.editInput:focus,
+.editSelect:focus,
+.editTextarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.editTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.saveButton,
+.cancelButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.saveButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #059669;
+}
+
+.cancelButton {
+  background-color: #6b7280;
+  color: white;
+}
+
+.cancelButton:hover {
+  background-color: #4b5563;
+}
+
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+  background: var(--color-bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 2s infinite;
+  z-index: 10;
+}
+
+.bellIcon {
+  font-size: 0.875rem;
+  animation: shake 1s ease-in-out infinite;
+}
+
+.unreadCount {
+  background: rgba(255, 255, 255, 0.9);
+  color: #ef4444;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.7);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-10deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.imageContainer:has(.notificationBadge) .favoriteButton {
+  top: 60px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1199px) and (min-width: 900px) {
+  .filterGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .sortButtons {
+    gap: 0.75rem;
+  }
+  
+  .sortButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 899px) and (min-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+   .filterGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .filterGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .rangeInputs {
+    gap: 0.75rem;
+  }
+  
+  .sortButtons {
+    gap: 0.5rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  
+  .sortButtons::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .sortButtons::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 2px;
+  }
+  
+  .sortButton {
+    flex-shrink: 0;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .filters {
+    padding: 0.875rem;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+  
+  .filterGrid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  
+  .filterGroup label {
+    font-size: 0.8rem;
+  }
+  
+  .filterInput {
+    padding: 0.625rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .rangeInputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .rangeInputs .filterInput {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .sortButtons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-top: 0.875rem;
+  }
+  
+  .sortButton {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .filters {
+    padding: 0.75rem;
+    gap: 0.875rem;
+  }
+  
+  .filterGrid {
+    gap: 0.75rem;
+  }
+  
+  .filterGroup label {
+    font-size: 0.75rem;
+  }
+  
+  .filterInput {
+    padding: 0.5rem;
+    font-size: 16px; /* Still prevent zoom */
+  }
+  
+  .sortButton {
+    padding: 0.625rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .filterInput:focus,
+  .sortButton:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  
+  .sortButton:active {
+    transform: scale(0.98);
+  }
+  
+  /* Better touch targets */
+  .sortButton {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+  
+  .filterInput {
+    min-height: 44px;
+  }
+}
+
+/* Landscape mode optimization for phones */
+@media screen and (max-height: 500px) and (orientation: landscape) and (max-width: 899px) {
+  .filters {
+    padding: 0.75rem;
+  }
+  
+  .filterGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .sortButtons {
+    flex-direction: row;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .sortButton {
+    flex-shrink: 0;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .filters .filterInput {
+    max-width: 200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

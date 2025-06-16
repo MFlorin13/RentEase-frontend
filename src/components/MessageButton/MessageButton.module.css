@@ -1,0 +1,108 @@
+/* Base button styles */
+.messageButton,
+.loginButton,
+.ownerButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  justify-content: center;
+  min-width: 140px;
+}
+
+/* Message Owner button (for non-owners) */
+.messageButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.messageButton:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Login button (for non-logged users) */
+.loginButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.loginButton:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Owner button (for property owners) */
+.ownerButton {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.ownerButton:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Icon styles */
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Active/pressed state */
+.messageButton:active,
+.loginButton:active,
+.ownerButton:active {
+  transform: translateY(0);
+}
+
+/* Focus states for accessibility */
+.messageButton:focus,
+.loginButton:focus,
+.ownerButton:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .messageButton,
+  .loginButton,
+  .ownerButton {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    min-width: 120px;
+  }
+  
+  .icon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .messageButton,
+  .loginButton,
+  .ownerButton {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+    gap: 0.25rem;
+  }
+  
+  .icon {
+    font-size: 0.8rem;
+  }
+}

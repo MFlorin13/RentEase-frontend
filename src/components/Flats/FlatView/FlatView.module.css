@@ -1,0 +1,326 @@
+.viewButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .viewButton:hover {
+    background-color: #2563eb;
+  }
+  
+  .modalRoot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modalContainer {
+    position: relative;
+    z-index: 10000;
+    background-color: var(--color-bg-primary);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 85vw;
+    height: 90vh;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .modalContent {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  .modalTitle {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    color: var(--color-text-primary);
+  }
+  
+  .imageContainer {
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flatImage {
+    width: 80%;
+    max-width: 600px;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  
+  .locationAlert {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border-left: 4px solid var(--color-accent);
+    flex-shrink: 0;
+  }
+  
+  .locationTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 0.125rem 0;
+  }
+  
+  .locationText {
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .detailsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1;
+    align-content: flex-start;
+  }
+  
+  .detailCard {
+    background-color: var(--color-bg-secondary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    min-height: 3rem;
+    flex: 0 0 calc(50% - 0.25rem);
+    max-width: calc(50% - 0.25rem);
+    box-sizing: border-box;
+  }
+  
+  .detailLabel {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+  
+  .detailValue {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    word-break: break-word;
+    line-height: 1.4;
+  }
+  
+  .modalFooter {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+  
+  .closeModalButton {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .closeModalButton:hover {
+    background-color: var(--color-bg-primary);
+  }
+  
+  /* Enhanced responsive design for flexbox layout */
+  @media (max-width: 1400px) {
+    .detailCard {
+      flex: 0 0 calc(50% - 0.25rem);
+      max-width: calc(50% - 0.25rem);
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .modalContainer {
+      max-width: 90vw;
+      height: 85vh;
+    }
+    
+    .detailCard {
+      flex: 0 0 calc(50% - 0.25rem);
+      max-width: calc(50% - 0.25rem);
+    }
+    
+    .flatImage {
+      width: 85%;
+      height: 12rem;
+    }
+    
+    .detailLabel {
+      font-size: 0.9rem;
+    }
+    
+    .detailValue {
+      font-size: 0.9rem;
+    }
+    
+    .locationTitle {
+      font-size: 1rem;
+    }
+    
+    .locationText {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modalContainer {
+      margin: 1rem;
+      max-width: calc(100vw - 2rem);
+      height: calc(100vh - 2rem);
+    }
+  
+    .detailsGrid {
+      gap: 0.375rem;
+    }
+    
+    .detailCard {
+      flex: 0 0 calc(50% - 0.1875rem);
+      max-width: calc(50% - 0.1875rem);
+      padding: 0.5rem;
+    }
+  
+    .modalContent {
+      padding: 0.75rem;
+    }
+  
+    .flatImage {
+      width: 90%;
+      height: 10rem;
+    }
+    
+    .modalTitle {
+      font-size: 1.5rem;
+    }
+    
+    .detailLabel {
+      font-size: 0.8rem;
+    }
+    
+    .detailValue {
+      font-size: 0.8rem;
+    }
+    
+    .locationTitle {
+      font-size: 1rem;
+    }
+    
+    .locationText {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modalContainer {
+      margin: 0.5rem;
+      height: calc(100vh - 1rem);
+    }
+    
+    .detailCard {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0.5rem;
+    }
+    
+    .modalTitle {
+      font-size: 1rem;
+    }
+  
+    .modalContent {
+      padding: 0.5rem;
+    }
+    
+    .flatImage {
+      width: 95%;
+      height: 8rem;
+    }
+    
+    .detailLabel {
+      font-size: 0.875rem;
+    }
+    
+    .detailValue {
+      font-size: 0.7rem;
+    }
+    
+    .locationTitle {
+      font-size: 1rem;
+    }
+    
+    .locationText {
+      font-size: 0.875rem;
+    }
+  }
